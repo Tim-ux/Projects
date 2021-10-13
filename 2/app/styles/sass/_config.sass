@@ -1,0 +1,73 @@
+// USER VARIABLES SECTION
+
+$accent: #f9c766 // Accent Color
+$dark: #1a1a1a
+$blue: #66c7cd
+$red: #F86868
+$over: #3D3C3C
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: raleway-vh, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+//@import 'node_modules/@fortawesome/fontawesome-free/css/all.min'
+@import 'node_modules/selectize/dist/css/selectize'
+@import 'node_modules/fotorama/fotorama'
+@import 'node_modules/owl.carousel/dist/assets/owl.carousel.min'
+@import 'node_modules/owl.carousel/dist/assets/owl.theme.default.min'
+@import 'node_modules/mmenu-js/dist/mmenu'
+@import 'node_modules/mburger-css/dist/mburger'
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('fira-vh', normal, 400, '../fonts/FiraSansRegular.woff2')
+@include font('raleway-vh', normal, 700, '../fonts/RalewayBold.woff2')
+@include font('raleway-vh', normal, 800, '../fonts/RalewayExtraBold.woff2')
+@include font('raleway-vh', normal, 200, '../fonts/RalewayLight.woff2')
+@include font('raleway-vh', normal, 400, '../fonts/RalewayRegular.woff2')
+@include font('raleway-vh', normal, 600, '../fonts/RalewaySemiBold.woff2')
+@include font('raleway-vh', normal, 100, '../fonts/RalewayThin.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #fff
+
+::selection
+	background-color: $blue
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: $red
+	&:required:valid
+		border-color: $blue
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
